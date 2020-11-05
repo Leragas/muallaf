@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. NoAw create something great!
 |
 */
 
@@ -43,5 +43,15 @@ Route::patch('/UpdateProfile/{user}', [ProfileController::class , 'UpdateProfile
 use App\Http\Controllers\StudentController;
 //Student model Controlelr
 Route::get('/Student', [StudentController::class , 'index']);
+Route::get('/Create/Student', [StudentController::class , 'create']);
+Route::post('/Store/Student', [StudentController::class , 'store']);
+Route::get('/Edit/Student/{student}', [StudentController::class , 'edit']);
+Route::patch('/Update/Student/{student}', [StudentController::class , 'update']);
+
+Route::get('/G1/Student/{student}', [StudentController::class , 'G1']);
+Route::get('/G2/Student/{student}', [StudentController::class , 'edit']);
+Route::get('/G3/Student/{student}', [StudentController::class , 'edit']);
+Route::get('/G4/Student/{student}', [StudentController::class , 'edit']);
+
 
 

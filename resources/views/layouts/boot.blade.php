@@ -33,7 +33,7 @@
         
 		
 		@if ( (Auth::user()) != null) 
-			@if ( (Auth::user()->email_verified_at) != null) 
+			@if ( (Auth::user()->level) == 9) 
 			{{ env('APP_NAME') }}- MASTER ACCESS
 			@else
 			{{ env('APP_NAME') }}
@@ -117,64 +117,10 @@
               <span>My Profile</span>
             </a>
           </li>
-           @if(auth()->user()->profile->membership_type >= 0)
-            <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/MyMembership">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Membership</span>
-            </a>
-          </li>    <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/MyWallet">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>My Wallet</span>
-            </a>
-          </li>
-          @else
-             <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/ActivateAccount">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Activate Account</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/MyWallet">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>My Wallet</span>
-            </a>
-          </li>
+           
+         
           
-          @endif
           
-          @if(auth()->user()->profile->affiliate_paid >= 1)
-           <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/Show/MyWidthdraw">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          
-              <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/ShowMyDM3">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>DM3</span>
-            </a>
-          </li>
-                <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/ShowMyDM5">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>DM5</span>
-            </a>
-          </li>
-           </li>
-                <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/ShowMySponsor">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Sponsor</span>
-            </a>
-          </li>
-                
-          
-          @endif
         <!-- 
           <li class="nav-item">
             <a class="nav-link" href="{{env('absolute')}}/profile/{{ auth()->user()->id }}/ShowMyData">
@@ -184,14 +130,8 @@
           -->
     
           
-          @if ( (Auth::user()->email_verified_at) != null)
-            
-            <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/ControlPanel">
-              <i class="fas fa-fw fa-table"></i>
-              <span>Control Panel</span></a>
-          </li>
-          
+          @if ( (Auth::user()->level) == 9)
+
            <li class="nav-item">
             <a class="nav-link" href="{{env('absolute')}}/users">
               <i class="fas fa-fw fa-table"></i>
@@ -199,11 +139,13 @@
           </li>
           
             <li class="nav-item">
-            <a class="nav-link" href="{{env('absolute')}}/Audit/Users">
-              <i class="fas fa-fw fa-table"></i>
-              <span>Audit Panel</span></a>
+            <a class="nav-link" href="{{env('absolute')}}/Student">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Student Management</span>
+            </a>
           </li>
-          
+           
+    
           @endif
         </ul>
  @endguest

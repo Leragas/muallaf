@@ -12,12 +12,19 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+           public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         //dd('dah sampai controller student');
+        $semuaStudent = Student::all();
+        
+        //dd($semuaStudent);
         
         
-          return view('student.index');
+          return view('student.index',compact('semuaStudent'));
     }
 
     /**
@@ -27,7 +34,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.create');
     }
 
     /**
@@ -38,7 +45,22 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataStudentBaru = request()->validate([
+              'name' => '',
+              'phone' => '',
+              'email' => '',
+              'national_id' => '',
+        ]);
+        
+        //dd($dataStudentBaru);
+        
+        $baru = Student::create($dataStudentBaru);
+        
+        //dd($baru);
+        
+        return redirect('/Student');
+        
+        
     }
 
     /**
@@ -58,10 +80,11 @@ class StudentController extends Controller
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
-    {
-        //
-    }
+    public function edit(Student $student) {return view('student.edit',compact('student')); }
+     public function G1(Student $student) {return view('student.G1',compact('student')); }
+      public function G2(Student $student) {return view('student.G2',compact('student')); }
+       public function G3(Student $student) {return view('student.G3',compact('student')); }
+        public function G4(Student $student) {return view('student.G4',compact('student')); }
 
     /**
      * Update the specified resource in storage.
@@ -72,7 +95,44 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+          $dataStudentBaru = request()->validate([
+              'name' => '',
+              'phone' => '',
+              'email' => '',
+              'national_id' => '',
+              
+               'ILMU_AKIDAH' => '',
+               'ILMU_FEQAH' => '',
+               'ILMU_AKHLAK' => '',
+               'ILMU_TAFSIR' => '',
+               'ILMU_HADIS' => '',
+               'ILMU_SIRAH' => '',
+               'ILMU_AL_QURAN' => '',
+              
+              
+               'KEPIMPINAN_PENGURUSAN' => '',
+               'KEPIMPINAN_SUKERELAWAN' => '',
+               'KEPIMPINAN_JATIDIRI' => '',
+              
+              
+               'SAHSIAH_KEBERSIHAN' => '',
+               'SAHSIAH_BERSOSIAL' => '',
+               'SAHSIAH_BERMINDA_POSITIVE' => '',
+              
+              'KEMAHIRAN_KEBERSIHAN' => '',
+              'KEMAHIRAN_BERSOSIAL' => '',
+              'KEMAHIRAN_BERMINDA_POSITIVE' => '',
+   
+              
+        ]);
+         // dd($dataStudentBaru);
+          $student->update($dataStudentBaru);
+          
+          //dd($student);
+          
+          
+             return redirect('/Student');
+          
     }
 
     /**

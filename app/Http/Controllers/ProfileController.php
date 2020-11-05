@@ -66,8 +66,6 @@ class ProfileController extends Controller
               'email' => '',
               'national_id' => '',
               'country' => '',
-              'merchantrade_acc' => '',
-              'usdt_wallet' => '',
         ]);
       
       auth()->user()->profile->update($data);
