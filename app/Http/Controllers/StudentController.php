@@ -14,7 +14,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        //dd('dah sampai controller student');
+        
+        
+          return view('student.index');
     }
 
     /**
