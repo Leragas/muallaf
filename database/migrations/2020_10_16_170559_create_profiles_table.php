@@ -24,28 +24,8 @@ class CreateProfilesTable extends Migration
             $table->string('email')->nullable();
             $table->string('national_id')->nullable();
             $table->string('country')->nullable();
-            $table->string('merchantrade_acc')->nullable();
-            $table->string('usdt_wallet')->nullable();
-           
-             $table->string('placement_payment_type')->default(0);
-             $table->string('payment_type')->default(0);
-            $table->string('membership_type')->default(0);
-            $table->boolean('membership_paid')->default(0);
-            
-            $table->string('affiliate_type')->default(0);
-            $table->boolean('affiliate_paid')->default(0);
-             $table->string('affiliate_sponsor')->default(0);
-            
-            
-            $table->string('S1')->nullable();
-            $table->string('S2')->nullable();
-            $table->string('S3')->nullable();
-            $table->string('S4')->nullable();
-            
-             $table->decimal('D1', 8, 2)->nullable();
-             $table->decimal('D2', 8, 2)->nullable();
-             $table->decimal('D3', 8, 2)->nullable();
-             $table->decimal('D4', 8, 2)->nullable(); 
+      
+ 
         });
     }
 

@@ -21,8 +21,9 @@ class newaccounts extends Seeder
         \Illuminate\Support\Facades\DB::table('users')->insert([
              'username' => 'Admin_'.$x,
             'name' => 'Admin_'.$x,
-            'email' => 'Admin_'.$x.'@e-dm5.uk',
+            'email' => 'Admin_'.$x.'@'.env('DOMAIN_NAME'),
              'email_verified_at' => '2000-01-01 00:00:00',
+            'level' => '9',
             'password' => \Illuminate\Support\Facades\Hash::make('Admin12#'),
         ]);
          

@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
-            $table->string('sponsor')->nullable();
+            $table->string('level')->default(0);
             
         });
     }
