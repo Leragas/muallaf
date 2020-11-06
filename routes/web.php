@@ -49,9 +49,13 @@ Route::get('/Edit/Student/{student}', [StudentController::class , 'edit']);
 Route::patch('/Update/Student/{student}', [StudentController::class , 'update']);
 
 Route::get('/G1/Student/{student}', [StudentController::class , 'G1']);
-Route::get('/G2/Student/{student}', [StudentController::class , 'edit']);
-Route::get('/G3/Student/{student}', [StudentController::class , 'edit']);
-Route::get('/G4/Student/{student}', [StudentController::class , 'edit']);
+Route::get('/G2/Student/{student}', [StudentController::class , 'G2']);
+Route::get('/G3/Student/{student}', [StudentController::class , 'G3']);
+Route::get('/G4/Student/{student}', [StudentController::class , 'G4']);
+
+
+Route::get('/Student/Report/{student}', [StudentController::class , 'report']);
+
 
 
 

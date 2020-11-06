@@ -52,6 +52,7 @@
                    <a href='/G2/Student/{{ $d->id }}'> <button class='btn btn-info'>G2 </button> </a>
                    <a href='/G3/Student/{{ $d->id }}'> <button class='btn btn-info'>G3 </button> </a>
                    <a href='/G4/Student/{{ $d->id }}'> <button class='btn btn-info'>G4 </button> </a>
+                     <a href='/Student/Report/{{ $d->id }}'> <button class='btn btn-success'>Print </button> </a>
                                 
                                 </td>
                         

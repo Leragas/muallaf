@@ -73,7 +73,12 @@ class StudentController extends Controller
     {
         //
     }
-
+    
+    public function report(Student $student)
+    {
+        dd($student);
+        return view('student.edit',compact('student')); 
+    }
     /**
      * Show the form for editing the specified resource.
      *
