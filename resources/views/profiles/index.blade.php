@@ -17,7 +17,6 @@
             <div class=" font-weight-bold" >phone: {{ $user->profile->phone }}</div>
             <div class="font-weight-bold" >email Position: {{ $user->profile->email }}</div>
             <div class=" font-weight-bold">national_id: {{ $user->profile->national_id }}</div> 
-
              </div> </div> </div>
        
            
