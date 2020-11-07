@@ -11,12 +11,15 @@
 
                 <div class="card-body">
                     
+                    
+                    @if ( (Auth::user()->level) == 9)
                     <br>
                     <a href='/Create/Student'>
                     <button class='btn btn-warning'>
                         Create Student
                     </button>
                         </a>
+                    @endif
                     
                     
                     <table id='dataTable' class='data-tables' border style='width:100%' >
@@ -41,18 +44,29 @@
                                  <td>{{ $d->email }}</td>
                                 <td>{{ $d->national_id }}</td>
                                 <td>  
-                <a href='/Edit/Student/{{ $d->id }}'> <button class='btn btn-warning'>Edit </button> </a> 
-                
-                  <a href='/Student/Report/{{ $d->id }}'> <button class='btn btn-success'>Print </button> </a>
-                      <br>
-                   <a href='/G1/Student/{{ $d->id }}'> <button class='btn btn-info'>ILMU </button> </a>
-                   <a href='/G2/Student/{{ $d->id }}'> <button class='btn btn-info'>KEPIMPINAN </button> </a>
-                   <a href='/G3/Student/{{ $d->id }}'> <button class='btn btn-info'>SAHSIAH </button> </a>
-                   <a href='/G4/Student/{{ $d->id }}'> <button class='btn btn-info'>KEMAHIRAN </button> </a><br>
+                                    
+                                    @if ( (Auth::user()->level) == 9)
+                <a href='{{env('absolute')}}/Edit/Student/{{ $d->id }}'> <button class='btn btn-warning'>Edit </button> </a> 
+                  <a href='{{env('absolute')}}/Student/Report/{{ $d->id }}'> <button class='btn btn-success'>Print </button> </a>
+                    <a href='{{env('absolute')}}/G1/Student/{{ $d->id }}'> <button class='btn btn-info'>ILMU </button> </a>  
+                   <a href='{{env('absolute')}}/G2/Student/{{ $d->id }}'> <button class='btn btn-info'>KEPIMPINAN </button> </a>
+                   <a href='{{env('absolute')}}/G3/Student/{{ $d->id }}'> <button class='btn btn-info'>SAHSIAH </button> </a>
+                   <a href='{{env('absolute')}}/G4/Student/{{ $d->id }}'> <button class='btn btn-info'>KEMAHIRAN </button> </a><br>
+                  @endif
+                       
+                  @if ( (Auth::user()->level) == 1)
+                         <a href='{{env('absolute')}}/G1/Student/{{ $d->id }}'> <button class='btn btn-info'>ILMU </button> </a>  
+                            @endif
+                            
+                            @if ( (Auth::user()->level) == 2)
+                           <a href='{{env('absolute')}}/G2/Student/{{ $d->id }}'> <button class='btn btn-info'>KEPIMPINAN </button> </a>
+                            @endif
+                            
+                               @if ( (Auth::user()->level) == 3)
+                          <a href='{{env('absolute')}}/G3/Student/{{ $d->id }}'> <button class='btn btn-info'>SAHSIAH </button> </a>
+                            @endif
                              
                                 </td>
-                        
-                        
                         
                             </tr>
                             @endforeach

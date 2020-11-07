@@ -84,56 +84,9 @@
                 
                 
                 
-                    <div class="form-group row">
-                    <label for="country" class="col-md-4 col-form-label">country</label>
-
-                    <input id="country"
-                           type="text"
-                           class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}"
-                           name="country"
-                           value="{{ old('country') ?? $user->profile->country }}"
-                           autocomplete="title" autofocus>
-
-                    @if ($errors->has('country'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('country') }}</strong>
-                        </span>
-                    @endif
-                </div>
+               
                 
-                    <div class="form-group row">
-                    <label for="merchantrade_acc" class="col-md-4 col-form-label">merchantrade_acc</label>
-
-                    <input id="merchantrade_acc"
-                           type="text"
-                           class="form-control{{ $errors->has('merchantrade_acc') ? ' is-invalid' : '' }}"
-                           name="merchantrade_acc"
-                           value="{{ old('merchantrade_acc') ?? $user->profile->merchantrade_acc }}"
-                           autocomplete="title" autofocus>
-
-                    @if ($errors->has('merchantrade_acc'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('merchantrade_acc') }}</strong>
-                        </span>
-                    @endif
-                </div>
-                
-                    <div class="form-group row">
-                    <label for="usdt_wallet" class="col-md-4 col-form-label">usdt_wallet</label>
-
-                    <input id="usdt_wallet"
-                           type="text"
-                           class="form-control{{ $errors->has('usdt_wallet') ? ' is-invalid' : '' }}"
-                           name="usdt_wallet"
-                           value="{{ old('usdt_wallet') ?? $user->profile->usdt_wallet }}"
-                           autocomplete="title" autofocus>
-
-                    @if ($errors->has('usdt_wallet'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('usdt_wallet') }}</strong>
-                        </span>
-                    @endif
-                </div>
+            
                 
 
                 <div class="row pt-4">

@@ -13,24 +13,45 @@ class newaccounts extends Seeder
      */
     public function run()
     {
-        $arr = array('A', 'B', 'C', 'D','E','F');
-        $index=0;
-        foreach ($arr as &$x) {
-        
-        $index++;
-        \Illuminate\Support\Facades\DB::table('users')->insert([
-             'username' => 'Admin_'.$x,
-            'name' => 'Admin_'.$x,
-            'email' => 'Admin_'.$x.'@'.env('DOMAIN_NAME'),
+     
+        \App\Models\User::create([
+             'username' => 'Admin',
+            'name' => 'Admin',
+            'email' => 'Admin@'.env('DOMAIN_NAME'),
              'email_verified_at' => '2000-01-01 00:00:00',
             'level' => '9',
             'password' => \Illuminate\Support\Facades\Hash::make('Admin12#'),
         ]);
          
-         $user = \App\Models\User::find($index);
-            $user->profile()->create([
-                'name' => $user->username,
-            ]);       
+         \App\Models\User::create([
+              'username' => 'Cikgu',
+            'name' => 'Cikgu',
+            'email' => 'Cikgu'.'@'.env('DOMAIN_NAME'),
+             'email_verified_at' => '2000-01-01 00:00:00',
+            'level' => '1',
+            'password' => \Illuminate\Support\Facades\Hash::make('Admin12#'),
+        ]);
+         
+             \App\Models\User::create([
+              'username' => 'Warden',
+            'name' => 'Warden',
+            'email' => 'Warden'.'@'.env('DOMAIN_NAME'),
+             'email_verified_at' => '2000-01-01 00:00:00',
+            'level' => '2',
+            'password' => \Illuminate\Support\Facades\Hash::make('Admin12#'),
+        ]);
+             
+                 \App\Models\User::create([
+              'username' => 'level3',
+            'name' => 'level3',
+            'email' => 'level3'.'@'.env('DOMAIN_NAME'),
+             'email_verified_at' => '2000-01-01 00:00:00',
+            'level' => '3',
+            'password' => \Illuminate\Support\Facades\Hash::make('Admin12#'),
+        ]);
+        
+     
+            
         }
     }
-}
+

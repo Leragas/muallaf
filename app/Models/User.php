@@ -54,18 +54,17 @@ class User extends Authenticatable
             $user->profile()->create([
                 'name' => $user->username,
                    'email' => $user->email,
-                'membership_type' => '-1',
                  'phone' => $user->phone,
-                'affiliate_sponsor' => $user->sponsor,
+              
                 
             ]);
-            
+            /*
             \Illuminate\Support\Facades\Mail::raw('New User has been registered Username: '.$user->username.'  Phone :'. $user->phone."  email :".$user->email , function ($message){
             $message->to(env('NOTI_MAILBOX'))->subject("New User Registeration");
             });
             
             
-            /*
+           
               \Illuminate\Support\Facades\Mail::raw('New User has been registered Username: '.$user->username.'  Phone :'. $user->phone."  email :".$user->email , function ($message){
             $message->to('rahman.edm5@gmail.com')->subject("New User Registeration");
             });

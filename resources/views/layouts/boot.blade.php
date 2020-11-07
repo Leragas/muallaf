@@ -128,6 +128,31 @@
               <span>My Claims</span></a>
           </li>
           -->
+           @if ( (Auth::user()->level) == 1)
+             <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Student">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Student</span>
+            </a>
+          </li>
+           @endif
+               @if ( (Auth::user()->level) == 2)
+              <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Student">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Student</span>
+            </a>
+          </li>
+           @endif
+           
+               @if ( (Auth::user()->level) == 3)
+            <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Student">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Student </span>
+            </a>
+          </li>
+           @endif
     
           
           @if ( (Auth::user()->level) == 9)
