@@ -14,7 +14,12 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        //
+           $semuaStudent = Activity::all();
+        
+        //dd($semuaStudent);
+        
+        
+          return view('activity.index',compact('semuaStudent'));
     }
 
     /**

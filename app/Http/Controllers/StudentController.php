@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
 {
     /**
@@ -55,7 +55,11 @@ class StudentController extends Controller
         //dd($dataStudentBaru);
         
         $baru = Student::create($dataStudentBaru);
-        
+            \App\Models\Activity::create([
+                'type' => 'Create',
+                'username' => Auth::user()->username,
+                'details' => 'Created Student :'.$baru->name,  
+            ]);
         //dd($baru);
         
         return redirect('/Student');
@@ -133,6 +137,12 @@ class StudentController extends Controller
           $student->update($dataStudentBaru);
           
           //dd($student);
+            \App\Models\Activity::create([
+                'type' => 'Update',
+                'username' =>  Auth::user()->username,
+                'details' => 'Updated Student :'.$student->name,  
+            ]);
+
           
           
              return redirect('/Student');

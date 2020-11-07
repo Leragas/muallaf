@@ -14,7 +14,7 @@
                     
                     @if ( (Auth::user()->level) == 9)
                     <br>
-                    <a href='/Create/Student'>
+                    <a href='{{env('absolute')}}/Create/Student'>
                     <button class='btn btn-warning'>
                         Create Student
                     </button>

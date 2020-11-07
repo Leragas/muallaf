@@ -169,6 +169,13 @@
               <span>Student Management</span>
             </a>
           </li>
+          
+           <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Activity">
+              <i class="fas fa-fw fa-table"></i>
+              <span>Activity</span></a>
+          </li>
+          
            
     
           @endif
