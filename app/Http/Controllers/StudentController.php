@@ -76,8 +76,8 @@ class StudentController extends Controller
     
     public function report(Student $student)
     {
-        dd($student);
-        return view('student.edit',compact('student')); 
+        //dd($student);
+        return view('student.report',compact('student')); 
     }
     /**
      * Show the form for editing the specified resource.
@@ -119,7 +119,6 @@ class StudentController extends Controller
                'KEPIMPINAN_SUKERELAWAN' => '',
                'KEPIMPINAN_JATIDIRI' => '',
               
-              
                'SAHSIAH_KEBERSIHAN' => '',
                'SAHSIAH_BERSOSIAL' => '',
                'SAHSIAH_BERMINDA_POSITIVE' => '',
@@ -130,7 +129,7 @@ class StudentController extends Controller
    
               
         ]);
-         // dd($dataStudentBaru);
+         //dd($dataStudentBaru);
           $student->update($dataStudentBaru);
           
           //dd($student);
