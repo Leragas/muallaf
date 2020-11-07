@@ -60,3 +60,7 @@ Route::get('/Student/Report/{student}', [StudentController::class , 'report']);
 use App\Http\Controllers\CikguController;
 
 Route::get('/Cikgu/Student', [CikguController::class , 'index']);
+
+
+use App\Http\Controllers\ActivityController;
+Route::get('/Activity', [ ActivityController::class , 'index']);

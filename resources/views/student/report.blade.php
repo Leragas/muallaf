@@ -27,7 +27,8 @@
      <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header"> <h3>Results ILMU 70%</h3> </div>
+                <div class="card-header"> <h3>Results ILMU 70%
+                    <img src='/Icon A.png' style='height:100px;width:100px;'> </h3></div>
                 <div class="card-body">
                      
                      ILMU_AKIDAH : {{ $student->ILMU_AKIDAH }}<br>
@@ -46,7 +47,7 @@
      
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header"> <h3>Results KEPIMPINAN 10%</h3> </div>
+                <div class="card-header"> <h3>Results KEPIMPINAN 10%<img src='/Icon B.png' style='height:100px;width:100px;'> </h3> </div>
                 <div class="card-body">
                    
                      KEPIMPINAN_PENGURUSAN : {{ $student->KEPIMPINAN_PENGURUSAN }}<br>
@@ -63,7 +64,7 @@
 
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header"> <h3>Results SAHSIAH 10%</h3></div>
+                <div class="card-header"> <h3>Results SAHSIAH 10%<img src='/Icon C.png' style='height:100px;width:100px;'> </h3></div>
                 <div class="card-body">
                   
                      SAHSIAH_KEBERSIHAN  : {{ $student->SAHSIAH_KEBERSIHAN  }}<br>
@@ -76,7 +77,7 @@
  
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header"> <h3>Results KEMAHRIAN 10%</h3>  </div>
+                <div class="card-header"> <h3>Results KEMAHRIAN 10%<img src='/Icon D.png' style='height:100px;width:100px;'> </h3>  </div>
                 <div class="card-body">
                    
                      KEMAHIRAN_KEBERSIHAN : {{ $student->KEMAHIRAN_KEBERSIHAN }}<br>
