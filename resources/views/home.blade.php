@@ -11,7 +11,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(load.gif) center no-repeat #000000;
+	background: url(load.gif) center no-repeat #ffffff;
 }
 </style>
 
@@ -40,7 +40,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Welcome to e-DM5 Blast') }}</div>
+                <div class="card-header">{{ __('Welcome to Muallaf') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
