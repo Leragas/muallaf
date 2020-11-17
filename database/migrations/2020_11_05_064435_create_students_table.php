@@ -23,11 +23,31 @@ class CreateStudentsTable extends Migration
             $table->string('national_id')->nullable();
             
             $table->string('ILMU_AKIDAH')->nullable();
+            $table->string('ILMU_AKIDAH_1')->default(0);
+            $table->string('ILMU_AKIDAH_2')->default(0);
+      
+            
             $table->string('ILMU_FEQAH')->nullable();
+            $table->string('ILMU_FEQAH_1')->nullable();
+            $table->string('ILMU_FEQAH_2')->nullable();
+            
             $table->string('ILMU_AKHLAK')->nullable();
+            $table->string('ILMU_AKHLAK_1')->nullable();
+            $table->string('ILMU_AKHLAK_2')->nullable();
+            
             $table->string('ILMU_TAFSIR')->nullable();
+            $table->string('ILMU_TAFSIR_1')->nullable();
+            $table->string('ILMU_TAFSIR_2')->nullable();
+            
             $table->string('ILMU_HADIS')->nullable();
+            $table->string('ILMU_HADIS_1')->nullable();
+            $table->string('ILMU_HADIS_2')->nullable();
+            
             $table->string('ILMU_SIRAH')->nullable();
+            $table->string('ILMU_SIRAH_1')->nullable();
+            $table->string('ILMU_SIRAH_2')->nullable();
+            
+            
             $table->string('ILMU_AL_QURAN')->nullable();
             $table->string('ILMU_TOTAL')->nullable();
             

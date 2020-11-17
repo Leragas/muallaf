@@ -130,10 +130,27 @@ class StudentController extends Controller
               'KEMAHIRAN_KEBERSIHAN' => '',
               'KEMAHIRAN_BERSOSIAL' => '',
               'KEMAHIRAN_BERMINDA_POSITIVE' => '',
+              
+              
+              
+              'd1' => '',
+              'd2' => '',
+              'd3' => '',
+              'd4' => '',
+              'd5' => '',
+              'd6' => '',
+              'd7' => '',
+              'd8' => '',
+              'd9' => '',
+              'd10' => '',
+              
+              
    
               
         ]);
-         //dd($dataStudentBaru);
+         dd($dataStudentBaru);
+         
+         
           $student->update($dataStudentBaru);
           
           //dd($student);
@@ -158,5 +175,81 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+    }
+    
+    
+     public function MarksAkhlak_1(Student $student) {
+         
+         $marks = $student->ILMU_AKIDAH_1;
+         
+       
+       
+          $data = (object)([
+            "d1" =>  strtok($marks,','),
+            "d2" =>  strtok(','),
+            "d3" =>  strtok(','),
+            "d4" =>  strtok(','),
+            "d5" =>  strtok(','),
+            "d6" =>  strtok(','),
+            "d7" =>  strtok(','),
+            "d8" =>  strtok(','),
+            "d9" =>  strtok(','),
+            "d10" =>  strtok(','),
+            "d11" =>  strtok(',')]);
+  
+         //dd($data);
+         
+         return view('student.MarksAkhlak_1',compact('student','data')); }
+     
+     
+     public function updateMarksAkhlak_1(Request $request, Student $student)
+    {
+         
+         //dd($student);
+          $d = request()->validate([
+
+              'd1' => '',
+              'd2' => '',
+              'd3' => '',
+              'd4' => '',
+              'd5' => '',
+              'd6' => '',
+              'd7' => '',
+              'd8' => '',
+              'd9' => '',    
+        ]);
+          
+         // dd($d);
+          
+
+          $appended = $d['d1'].','
+                  .$d['d2'].','
+                  .$d['d3'].','
+                  .$d['d4'].','
+                  .$d['d5'].','
+                  .$d['d6'].','
+                  .$d['d7'].','
+                  .$d['d8'].','
+                  .$d['d9'].',';
+           
+      
+          
+         $dataStudentBaru = $d;
+         //dd($dataStudentBaru,$appended);
+         
+          $data['ILMU_AKIDAH_1'] = $appended;
+          $student->update($data);
+          
+          //dd($student);
+            \App\Models\Activity::create([
+                'type' => 'Update',
+                'username' =>  Auth::user()->username,
+                'details' => 'Updated Student :'.$student->name,  
+            ]);
+
+          
+          
+             return redirect('/Student');
+          
     }
 }

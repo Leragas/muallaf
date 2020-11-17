@@ -48,7 +48,7 @@
                                     @if ( (Auth::user()->level) == 9)
                 <a href='{{env('absolute')}}/Edit/Student/{{ $d->id }}'> <button class='btn btn-warning'>Edit </button> </a> 
                   <a href='{{env('absolute')}}/Student/Report/{{ $d->id }}'> <button class='btn btn-success'>Print </button> </a>
-                    <a href='{{env('absolute')}}/G1/Student/{{ $d->id }}'> <button class='btn btn-info'>ILMU </button> </a>  
+                    <a href='{{env('absolute')}}/MarksAkhlak_1/{{ $d->id }}'> <button class='btn btn-warning'>Marks - Akhlak_1 </button> </a>  
                    <a href='{{env('absolute')}}/G2/Student/{{ $d->id }}'> <button class='btn btn-info'>KEPIMPINAN </button> </a>
                    <a href='{{env('absolute')}}/G3/Student/{{ $d->id }}'> <button class='btn btn-info'>SAHSIAH </button> </a>
                    <a href='{{env('absolute')}}/G4/Student/{{ $d->id }}'> <button class='btn btn-info'>KEMAHIRAN </button> </a><br>
