@@ -4,10 +4,10 @@
 
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Student Management Panel</div>
+   
+        <div class="col-lg-12">
+                <div class="card shadow mb-4">
+                        <div class="card-header py-3">Student Management Panel</div>
 
                 <div class="card-body">
                     
@@ -21,17 +21,14 @@
                         </a>
                     @endif
                     
-                    
-                    <table id='dataTable' class='data-tables' border style='width:100%' >
+                     <div class="table-responsive">
+                    <table class="table table-bordered block" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                            <tr> 
-                                 <!--<td>ID</td>-->
-                                <td>Name</td>
-                                <td>Phone</td>
-                                <td>Email</td>
-                                <td>IC</td>
-                                <td>Action</td>
-                            </tr>
+                                <th>Name</th>
+                                <th>Phone/
+                               Email</th>
+                                <th>IC</th>
+                                <th>Action</th>
                         </thead>
                         
                         <tbody>
@@ -40,8 +37,7 @@
                               <tr> 
                                      <!--<td>{{ $d->id }}</td> -->
                                 <td>{{ $d->name }}</td>
-                                 <td>{{ $d->phone }}</td>
-                                 <td>{{ $d->email }}</td>
+                                 <td>{{ $d->phone }}<br>{{ $d->email }}</td>
                                 <td>{{ $d->national_id }}</td>
                                 <td>  
                                     
@@ -79,11 +75,11 @@
                         
                     </table>
                     
-                    
+                      </div>
                     
                 </div>
             </div>
         </div>
     </div>
-</div>
+
 @endsection

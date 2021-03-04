@@ -13,7 +13,9 @@
                     
 
                     
-                    <table id='dataTable' class='data-tables' border style='width:100%' >
+                   
+                     <div class="table-responsive">
+                    <table class="table table-bordered block" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr> 
                                  <!--<td>ID</td>-->
@@ -50,7 +52,7 @@
                     </table>
                     
                     
-                    
+                    </div>
                 </div>
             </div>
         </div>

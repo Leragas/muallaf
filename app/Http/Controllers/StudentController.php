@@ -148,7 +148,7 @@ class StudentController extends Controller
    
               
         ]);
-         dd($dataStudentBaru);
+         //dd($dataStudentBaru);
          
          
           $student->update($dataStudentBaru);
