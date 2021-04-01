@@ -118,9 +118,39 @@
             </a>
           </li>
            
-         
+            <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Uploadtype1">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Uploadtype1</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Uploadtype2">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Uploadtype2</span>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Uploadtype3">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Uploadtype3</span>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{env('absolute')}}/Uploadtype4">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Uploadtype4</span>
+            </a>
+          </li>
           
-          
+
         <!-- 
           <li class="nav-item">
             <a class="nav-link" href="{{env('absolute')}}/profile/{{ auth()->user()->id }}/ShowMyData">

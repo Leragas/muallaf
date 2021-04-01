@@ -40,33 +40,22 @@ Route::get('/editMyProfile', [ProfileController::class , 'edit']);
 Route::patch('/UpdateProfile/{user}', [ProfileController::class , 'UpdateProfile']);
 
 
-use App\Http\Controllers\StudentController;
-//Student model Controlelr
-Route::get('/Student', [StudentController::class , 'index']);
-Route::get('/Create/Student', [StudentController::class , 'create']);
-Route::post('/Store/Student', [StudentController::class , 'store']);
-Route::get('/Edit/Student/{student}', [StudentController::class , 'edit']);
-Route::patch('/Update/Student/{student}', [StudentController::class , 'update']);
-
-Route::get('/G1/Student/{student}', [StudentController::class , 'G1']);
-
-Route::get('/G2/Student/{student}', [StudentController::class , 'G2']);
-Route::get('/G3/Student/{student}', [StudentController::class , 'G3']);
-Route::get('/G4/Student/{student}', [StudentController::class , 'G4']);
+use App\Http\Controllers\ProjectsController;
+Route::get('/Uploadtype1', [ ProjectsController::class , 'index']);
+Route::post('/UploadXL1', [ProjectsController::class , 'import']);
 
 
-Route::get('/MarksAkhlak_1/{student}', [StudentController::class , 'MarksAkhlak_1']);
-Route::patch('/Update/Marks/Akhlak_1/{student}', [StudentController::class , 'updateMarksAkhlak_1']);
+Route::get('/Uploadtype2', [ ProjectsController::class , 'index2']);
+Route::post('/UploadXL2', [ProjectsController::class , 'store2']);
 
 
-
-Route::get('/Student/Report/{student}', [StudentController::class , 'report']);
-
-
-use App\Http\Controllers\CikguController;
-
-Route::get('/Cikgu/Student', [CikguController::class , 'index']);
+Route::get('/Uploadtype3', [ ProjectsController::class , 'index3']);
+Route::post('/UploadXL3', [ProjectsController::class , 'store3']);
 
 
-use App\Http\Controllers\ActivityController;
-Route::get('/Activity', [ ActivityController::class , 'index']);
+Route::get('/Uploadtype4', [ ProjectsController::class , 'index4']);
+Route::post('/UploadXL4', [ProjectsController::class , 'store4']);
+
+Route::get('/import_excel', 'ProjectsController@index');
+Route::post('/import_excel/import', 'ImportExcelController@import');
+

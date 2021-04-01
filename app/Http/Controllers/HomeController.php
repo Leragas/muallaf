@@ -27,11 +27,11 @@ class HomeController extends Controller
     public function index()
     {
         
-            \App\Models\Activity::create([
-                'type' => 'Login',
-                'username' => Auth::user()->username,
-                'details' => 'Logged In',  
-            ]);
+            //  \App\Models\Activity::create([
+            //   'type' => 'Login',
+            //  'username' => Auth::user()->username,
+            //  'details' => 'Logged In',  
+            //   ]);
         return view('home');
     }
 }
