@@ -1,20 +1,46 @@
 <?php
 
+  
+
 namespace App\Imports;
 
-use App\User;
+  
+
+use App\Models\User;
+
 use Maatwebsite\Excel\Concerns\ToModel;
+
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class UsersImport implements ToModel, WithHeadingRow
-{
-    public function model(array $row)
-    {
-        return [
-            'name'  => $row['name'],
-            'email' => $row['email']
-        ];
-    }
-}
+  
 
+class UsersImport implements ToModel, WithHeadingRow
+
+{
+
+    /**
+
+    * @param array $row
+
+    *
+
+    * @return \Illuminate\Database\Eloquent\Model|null
+
+    */
+
+    public function model(array $row)
+
+    {
+
+        return new User([
+
+            'name'     => $row['name'],
+
+            'email'    => $row['email'], 
+
+        ]);
+
+    }
+
+}
 

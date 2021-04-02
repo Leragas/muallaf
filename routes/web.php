@@ -41,8 +41,8 @@ Route::patch('/UpdateProfile/{user}', [ProfileController::class , 'UpdateProfile
 
 
 use App\Http\Controllers\ProjectsController;
-Route::get('/Uploadtype1', [ ProjectsController::class , 'index']);
-Route::post('/UploadXL1', [ProjectsController::class , 'import']);
+Route::get('/Uploadtype1', [ ProjectsController::class , 'index1']);
+Route::post('/UploadXL1', [ProjectsController::class , 'store1'])->name('store1');
 
 
 Route::get('/Uploadtype2', [ ProjectsController::class , 'index2']);
@@ -56,6 +56,4 @@ Route::post('/UploadXL3', [ProjectsController::class , 'store3']);
 Route::get('/Uploadtype4', [ ProjectsController::class , 'index4']);
 Route::post('/UploadXL4', [ProjectsController::class , 'store4']);
 
-Route::get('/import_excel', 'ProjectsController@index');
-Route::post('/import_excel/import', 'ImportExcelController@import');
 

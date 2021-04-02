@@ -21,6 +21,7 @@ class UsersImport3 implements WithMappedCells, ToModel
     public function model(array $row)
     {// show all the cells we read in a array then fill in the model information
         dd("We're Ready to read the excel",$row);
+        
         return new User([
             'name' => $row['name'],
             'email' => $row['email'],

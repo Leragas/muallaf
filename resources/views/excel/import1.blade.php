@@ -6,10 +6,8 @@
         @csrf
                 <input type="file" name="file" class="form-control">
                 <br>
-                <button class="btn btn-success">Import Excel 1</button>
+                <button class="btn btn-success">Import Excel 2</button>
             </form>
     
 </div>
-
-
 @endsection

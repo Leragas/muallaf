@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\projects;
 use Illuminate\Http\Request;
+use DB;
+use Excel;
 
 class ProjectsController extends Controller
 {
@@ -18,43 +20,37 @@ class ProjectsController extends Controller
     
 //testing
 
-function index()
-    {
-     $data = DB::table('test')->orderBy('ID', 'DESC')->get();
-     return view('import1.excel', compact('data'));
-    }
 
-    function import(Request $request)
-    {
-     $this->validate($request, [
-      'select_file'  => 'required|mimes:xls,xlsx'
-     ]);
+function store1(Request $request)
+{
+ $this->validate($request, [
+  'select_file'  => 'required|mimes:xls,xlsx'
+ ]);
 
-     $path = $request->file('select_file')->getRealPath();
+ $path = $request->file('select_file')->getRealPath();
 
-     $data = Excel::load($path)->get();
+ $data = Excel::load($path)->get();
 
-     if($data->count() > 0)
-     {
-      foreach($data->toArray() as $key => $value)
-      {
-       foreach($value as $row)
-       {
-        $insert_data[] = array(
-         'CustomerName'  => $row['name'],
-         'Country'   => $row['email']
-        );
-       }
-      }
+ if($data->count() > 0)
+ {
+  foreach($data->toArray() as $key => $value)
+  {
+   foreach($value as $row)
+   {
+    $insert_data[] = array(
+     'name'  => $row['name'],
+     'email'   => $row['email']
+    );
+   }
+  }
 
-      if(!empty($insert_data))
-      {
-       DB::table('tbl_customer')->insert($insert_data);
-      }
-     }
-     return back()->with('success', 'Excel Data Imported successfully.');
-    }
-
+  if(!empty($insert_data))
+  {
+   DB::table('test')->insert($insert_data);
+  }
+ }
+ return back()->with('success', 'Excel Data Imported successfully.');
+}
 //testing
 
 
@@ -101,7 +97,7 @@ function index()
         return view('excel.import1', compact('profile','user'));
     }
    
-    public function store1(Request $request)
+    public function store1jap(Request $request)
     {
         // Upload and save to server folder 
        $request->validate(['file' => '',]);      

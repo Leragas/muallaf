@@ -14,7 +14,8 @@ class UsersImport1 implements WithMappedCells, ToModel
 
         return [
             'data1'  => 'B1',
-            'data2' => 'B2',
+            'data' => 'B2',
+            'data2' => 'B4',
         ];
     }
     
@@ -22,8 +23,9 @@ class UsersImport1 implements WithMappedCells, ToModel
     {// show all the cells we read in a array then fill in the model information
         dd("We're Ready to read the excel",$row);
         return new User([
-            'name' => $row['name'],
-            'email' => $row['email'],
+            'name' => $row[0],
+            'email' => $row[1],
+           
         ]);
     }
 }
