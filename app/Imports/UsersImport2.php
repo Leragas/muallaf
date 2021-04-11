@@ -1,32 +1,22 @@
 <?php
 
+  
+//this php file is to pick which pages in excel file to read and 
+//send to another function
+
+
 namespace App\Imports;
 
-use App\User;
-use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\WithMappedCells;
+use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
-class UsersImport2 implements WithMappedCells, ToModel 
+class UsersImport2 implements WithMultipleSheets 
 {
-    public function mapping(): array
+   
+    public function sheets(): array
     {
-        //Read Cells Via Coordiantes 
-
         return [
-            'data1'  => 'B1',
-            'data2' => 'B2',
-            'data3' => 'B2',
-            
+            0 => new sheetsearch2(),  // number of pages declare here (firstsheet is the name of another php  file to run another function) 
+         // 'table customer' => new SecondSheetImport(), //can set name of page also
         ];
     }
-    
-    public function model(array $row)
-    {// show all the cells we read in a array then fill in the model information
-        dd("We're Ready to read the excel",$row);
-        return new User([
-            'name' => $row[0],
-            'email' => $row[1],
-        ]);
-    }
 }
-
